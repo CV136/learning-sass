@@ -7,6 +7,9 @@
 .document h1 {
   text-transform: uppercase;
 }
+.document h2 {
+  color: #ff4d4d;
+}
 .document:hover {
   box-shadow: 0 0 10px 10px #ccf;
 }
