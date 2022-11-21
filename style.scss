@@ -1,3 +1,74 @@
-h1 {
-    text-transform: uppercase;
+
+.document {
+    display: flex;
+    flex-flow: column;
+    width: 500px;
+    background-color: #ffc; /*for easier visualization, delete when done*/
+    h1 {
+        text-transform: uppercase;
+    }
+    &:hover {
+        box-shadow: 0 0 10px 10px #ccf;
+    }
 }
+/*changing width of the container div doesn't affect the contained div with the image?*/
+
+@mixin red-textbox {
+    color: white;
+    background-color: #f33;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.date {
+    @include red-textbox;
+    width: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px; left: 400px;
+}
+/*on the photo, covered by the white overlay too*/
+
+
+img {
+    width: 500px;
+    height: auto;
+    z-index: -1;
+}
+
+.photos {
+    @include red-textbox;
+    text-transform: uppercase;
+    width: 100px;
+}
+/*sticks to the upper border of article and moves with it (position absolute?), not covered by the white overlay*/
+
+.article {
+    box-sizing: border-box;
+    padding: 20px;
+    z-index: 2;
+}
+
+.article-content {
+    display: none;
+    &:hover {
+        display: block;
+    }
+}
+
+.photo {
+    background-color: #e6fffb; /*delete when done*/
+    height: 80%;
+}
+
+.article {
+    background-color: #e6ccff; /*delete when done*/
+    height: 40%;
+}
+
+/*hover
+zoom on pic
+extend text zone pour afficher le texte et pas juste le titre
+white overlay
+shadow around the box
+*/
